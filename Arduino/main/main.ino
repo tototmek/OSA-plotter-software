@@ -15,7 +15,7 @@
 #define HOME_POSITION_Z 1000
 #define X_MAX 31200
 #define Y_MAX 28000
-#define Z_MAX 16000
+#define Z_MAX 14400
 #define COMMAND_BUFFER_SIZE 216
 
 int commandBuffer[COMMAND_BUFFER_SIZE][3];

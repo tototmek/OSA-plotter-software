@@ -83,10 +83,10 @@ class CommandBuffer:
 
 class OsaPlotter:
 
-    def __init__(self):
-        self._con = Connection(9600, "COM3")
+    def __init__(self, port: str = "COM3"):
+        self._con = Connection(9600, port)
         self.params = None
-        self._load_params("osa_params.yaml")
+        self._load_params("Python/osa_params.yaml")
         self.cmd_buffer = CommandBuffer()
         self.home()
         self.position = self.get_position()

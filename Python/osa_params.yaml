@@ -6,7 +6,7 @@ axes:
     length: 350
     steps_per_mm: 80
   z:
-    length: 100
+    length: 90
     steps_per_mm: 160
 cmd_buffer_max_size: 216
 max_speed: 33
