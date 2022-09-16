@@ -1,0 +1,12 @@
+axes:
+  x:
+    length: 380
+    steps_per_mm: 80
+  y:
+    length: 350
+    steps_per_mm: 80
+  z:
+    length: 100
+    steps_per_mm: 80
+cmd_buffer_max_size: 216
+max_speed: 33
