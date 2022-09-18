@@ -10,12 +10,12 @@
 #define Z_STEP 7
 #define PING_RESPONSE_STR "OSA-plotter"
 #define HOMING_STEP_PERIOD 666
-#define HOME_POSITION_X 500
-#define HOME_POSITION_Y 2000
-#define HOME_POSITION_Z 1000
-#define X_MAX 31200
-#define Y_MAX 28000
-#define Z_MAX 14400
+#define HOME_POSITION_X 250
+#define HOME_POSITION_Y 1000
+#define HOME_POSITION_Z 500
+#define X_MAX 15600
+#define Y_MAX 14000
+#define Z_MAX 7200
 #define COMMAND_BUFFER_SIZE 216
 
 int commandBuffer[COMMAND_BUFFER_SIZE][3];
@@ -220,7 +220,9 @@ void moveUniformly(int dX, int dY, int dZ) {
                 xNextTime += pX;
                 xState = !xState;
                 digitalWrite(X_STEP, xState);
-                dX -= 1;
+                if (!xState) {
+                  dX -= 1;
+                }
                 if (dX == 0) {
                     xDone = true;    
                 }
@@ -231,7 +233,9 @@ void moveUniformly(int dX, int dY, int dZ) {
                 yNextTime += pY;
                 yState = !yState;
                 digitalWrite(Y_STEP, yState);
-                dY -= 1;
+                if (!yState) {
+                  dY -= 1;
+                }
                 if (dY == 0) {
                     yDone = true;    
                 }
@@ -242,7 +246,9 @@ void moveUniformly(int dX, int dY, int dZ) {
                 zNextTime += pZ;
                 zState = !zState;
                 digitalWrite(Z_STEP, zState);
-                dZ -= 1;
+                if (!zState) {
+                  dZ -= 1;
+                }
                 if (dZ == 0) {
                     zDone = true;    
                 }
